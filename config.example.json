@@ -1,0 +1,63 @@
+{
+  "routing": {
+    "strategy": "cheapest",
+    "candidates": ["local", "openai-mini", "anthropic", "openai-large"],
+    "max_attempts": 3,
+    "fail_threshold": 3
+  },
+  "cache": {
+    "enabled": true,
+    "ttl_seconds": 3600,
+    "max_entries": 1000
+  },
+  "ledger": {
+    "path": "ledger.jsonl"
+  },
+  "providers": {
+    "local": {
+      "type": "ollama",
+      "base_url": "http://localhost:11434",
+      "default_model": "llama3.1:8b",
+      "timeout_seconds": 120
+    },
+    "openai-mini": {
+      "type": "openai",
+      "api_key_env": "OPENAI_API_KEY",
+      "default_model": "gpt-4o-mini",
+      "timeout_seconds": 60
+    },
+    "anthropic": {
+      "type": "anthropic",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "default_model": "claude-3-5-haiku-20241022",
+      "timeout_seconds": 60
+    },
+    "openai-large": {
+      "type": "openai",
+      "api_key_env": "OPENAI_API_KEY",
+      "default_model": "gpt-4o",
+      "timeout_seconds": 90,
+      "prices": {
+        "gpt-4o": [0.0025, 0.01]
+      }
+    },
+    "azure-prod": {
+      "type": "azure",
+      "endpoint": "https://my-resource.openai.azure.com",
+      "deployment": "gpt-4o-prod",
+      "api_version": "2024-02-01",
+      "api_key_env": "AZURE_OPENAI_API_KEY",
+      "timeout_seconds": 60
+    },
+    "internal-vllm": {
+      "type": "openai_compat",
+      "base_url": "http://vllm.internal:8000/v1",
+      "api_key_env": "VLLM_API_KEY",
+      "default_model": "mistral-7b-instruct",
+      "timeout_seconds": 30,
+      "prices": {
+        "mistral-7b-instruct": [0.0, 0.0]
+      }
+    }
+  }
+}

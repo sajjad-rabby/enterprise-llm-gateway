@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enterprise-llm-gateway"
+version = "1.0.0"
+description = "Multi-provider LLM gateway with response caching, strategy-driven routing, automatic failover, and cost auditing."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Sajjad" }]
+keywords = [
+    "llm",
+    "gateway",
+    "routing",
+    "failover",
+    "cost-control",
+    "openai-compatible",
+    "aiops",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Distributed Computing",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+llm-gateway = "enterprise_llm_gateway.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Sunyiad/enterprise-llm-gateway"
+Repository = "https://github.com/Sunyiad/enterprise-llm-gateway"
+Issues = "https://github.com/Sunyiad/enterprise-llm-gateway/issues"
+
+[tool.setuptools.packages.find]
+include = ["enterprise_llm_gateway*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
