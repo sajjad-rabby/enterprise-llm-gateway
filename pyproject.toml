@@ -41,9 +41,9 @@ dev = ["pytest>=7.0"]
 llm-gateway = "enterprise_llm_gateway.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Sunyiad/enterprise-llm-gateway"
-Repository = "https://github.com/Sunyiad/enterprise-llm-gateway"
-Issues = "https://github.com/Sunyiad/enterprise-llm-gateway/issues"
+Homepage = "https://github.com/sajjad-rabby/enterprise-llm-gateway"
+Repository = "https://github.com/sajjad-rabby/enterprise-llm-gateway"
+Issues = "https://github.com/sajjad-rabby/enterprise-llm-gateway/issues"
 
 [tool.setuptools.packages.find]
 include = ["enterprise_llm_gateway*"]

@@ -110,7 +110,7 @@ flowchart TB
 ## Installation
 
 ```bash
-git clone https://github.com/Sunyiad/enterprise-llm-gateway.git
+git clone https://github.com/sajjad-rabby/enterprise-llm-gateway.git
 cd enterprise-llm-gateway
 pip install -e .
 ```
